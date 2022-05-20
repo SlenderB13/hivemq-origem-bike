@@ -4,17 +4,7 @@ module.exports = class Bike {
         this.battery = battery,
         this.engineOn = engineOn
 
-        const { id, soc } = this.battery
-
-        this.telemetry = {
-            chassi: this.chassi,
-            battery: {
-                id: id,
-                charge: soc
-            },
-            engineOn: this.engineOn
-        }
-
+        this.collectTelemetry()
         this.sendTelemetry()
     }
 
@@ -24,6 +14,19 @@ module.exports = class Bike {
         } else {
             this.engineOn = true
             console.log('Engine On')
+        }
+    }
+
+    collectTelemetry () {
+        const { id, soc } = this.battery
+
+        this.telemetry = {
+            chassi: this.chassi,
+            battery: {
+                id: id,
+                charge: soc
+            },
+            engineOn: this.engineOn
         }
     }
 

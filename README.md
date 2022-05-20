@@ -13,3 +13,6 @@ This project is built in NodeJS and it's using some dependencies, so after cloni
 npm install
 node main.js
 ```
+## Environment
+* NodeJS v18.02 
+* Linux - PopOS 22.04
